@@ -1,0 +1,76 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --grid-cols: 16;
+    --grid-rows: 16;
+    --primary-color: #3498db;
+    --background-color: #f0f0f0;
+    --button-background: #2980b9;
+}
+
+body {
+    background: var(--background-color);
+    font-family: 'Arial', sans-serif;
+}
+
+#wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+h1 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+#button, #reset-button {
+    margin-top: 20px;
+    padding: 15px 30px;
+    border: none;
+    background-color: var(--button-background);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+#button:hover, #reset-button:hover {
+    background-color: #2471a3;
+}
+
+#color-input {
+    margin-top: 20px;
+}
+
+.grid-container {
+    display: grid;
+    width: 600px;
+    height: 600px;
+    grid-template-rows: repeat(var(--grid-rows), 1fr);
+    grid-template-columns: repeat(var(--grid-cols), 1fr);
+    background: white;
+    border: 2px solid #bdc3c7;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.grid-item {
+    border: 1px solid #bdc3c7;
+    text-align: center;
+    padding: 15px;
+}
+
+@media screen and (max-width: 768px) {
+    .grid-container {
+        width: 80%;
+        height: 80%;
+    }
+}
